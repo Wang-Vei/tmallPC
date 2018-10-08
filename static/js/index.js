@@ -2,11 +2,17 @@ $(function(){
     //顶部导航栏
     function down(item){
         item.mouseenter(function(){
+            $(this).css('backgroundColor','#fff')
             $(this).find('.menu-bd').css('display','block')
+            $(this).find('.wline').css('display','block')
             $(this).find('b').css('transform','rotate(180deg)')
         })
         item.mouseleave(function(){
+            $(this).css('backgroundColor','#F2F2F2')
+            // $(this).find('.menu-hd').css('borderBottomColor','#E5E5E5')
             $(this).find('.menu-bd').css('display','none')
+            $(this).find('.wline').css('display','none')
+            // $(this).find('.menu-bd').css('borderTopColor','#E5E5E5')
             $(this).find('b').css('transform','rotate(360deg)')
         })
     }
@@ -31,7 +37,7 @@ $(function(){
         $('.wrap .item').eq(index).find(".items1").css("color",color[index])
     })
     $('.wrap .item').mouseleave(function(){
-        $(this).css("background-color","rgba(0,0,0,0.5)")
+        $(this).css("background-color","rgba(0,0,0,0)")
         let index=$(this).index()
         $('.wrap .item .content').eq(index).css("display","none")
         $('.wrap .item .items1').css("color","#fff")
@@ -96,7 +102,7 @@ $(function(){
     btn.mouseleave(function(){
         tt=setInterval(keep,3000)
     })
-    // 侧导航
+    //侧导航
     let vip=$('.mui-mbar-tab-prof')
     let money=$('.mui-mbar-tab-asset')
     let shouc=$('.mui-mbar-tab-favor')
@@ -106,54 +112,56 @@ $(function(){
     let fk=$('.mui-mbar-tab-ue')
     function aside(item){
         item.mouseenter(function(){
-                item.find('.logo').css({
-                    background: '#ff0036',
-                })
-                item.find('.bgg').css({
-                    display: 'block'
-                })
-                item.find('.tips').css({
-                    right: '35px',
-                    display: 'block',
-                    transition: 'all .6s',
-                    opacity: 1,
-                })
-
-            
+            item.find('.logo').css({
+                background: '#ff0036',
+            })
+            // item.find('.bgg').css({
+            //     display: 'block'
+            // })
+            item.find('.tips').css({
+                right: '35px',
+                // display: 'block',
+                transition: 'all .6s',
+                opacity: 1,
+            })
         })
         item.mouseleave(function(){
             item.find('.tips').css({
                 right: '70px',
-                display: 'block',
+                // display: 'block',
                 opacity: 0,
             })
-            
             item.find('.logo').css({
                 background: '#000',
             })
         })
     }
     aside(vip),aside(money),aside(shouc),aside(isee),aside(cz),aside(top),aside(fk)
-    // 楼层跳转
+    //楼层跳转
     let arrHeight=$('.floor-con').map(function(){
         return $(this).offset().top;
     })
-    let guess=$('.guess').offset().top;
+    let floorcon=$('.floor-con').offset().top;
     let flag=true;
-    let sidebg=$('.fpLift a')
-    let color3=['#64C33','#FF0036','#EA5F8D','#0AA6E8','#64C333','#EA5F8D','#19C8A9','#FF0036']
+    let sidebg=$('.fpLift .lc')
+    let color3=['#64C333','#FF0036','#EA5F8D','#0AA6E8','#64C333','#EA5F8D','#19C8A9','#FF0036']
     // console.log(sidebg)
     arrHeight=arrHeight.toArray()
-    arrHeight.push(guess)
+    arrHeight.push(floorcon)
     // console.log(arrHeight)
     $(window).scroll(function(){
         if(!flag){
             return
         }
         let top=$(this).scrollTop()
+        // if(top>=300){
+        //     $(".mui-lift").slideDown()
+        // }else{
+        //     $(".mui-lift").slideUp()
+        // }
+        $(this).scrollTop() >=400 ? $(".mui-lift").slideDown():$(".mui-lift").slideUp()
+        $(this).scrollTop() >=930 ? $(".middle-search").css('top','0'):$(".middle-search").css('top','-50px')
         let index=arrHeight.findIndex((item)=>item>top-250)
-        $(this).scrollTop() > 400 ? $(".mui-lift").slideDown():$(".mui-lift").slideUp()
-        $(this).scrollTop() > 730 ? $(".middle-search").css('top','0'):$(".middle-search").css('top','-50px')
         if(index>=0){
             sidebg.css('background','rgba(0, 0, 0, 0.6)')
             .eq(index)
@@ -174,9 +182,12 @@ $(function(){
     $(".backTop").click(function(){
         $("html").animate({scrollTop:0},200)
     })
-    $('.s-combobox').blur(function () {
-        $(this).val("")
+    $('.combobox-input').focus(function () {
+        $(this).attr('placeholder').css('color','yellow')
     })
+    // $('.s-combobox').blur(function () {
+    //     $(this).val("")
+    // })
     $('.combobox-input').blur(function () {
         $(this).val("")
     })

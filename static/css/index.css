@@ -107,13 +107,21 @@ body{
     line-height: 1.4;
     padding: 8px 10px;
     display: none;
-    left: 0;
+    left: -1px;
     top: 33px;
     background: #fff;
     filter: alpha(opacity=99);
     z-index: 93110;
     border: solid #eee;
     border-width: 0 1px 1px;
+}
+.sn-quick-menu .mytaobao .wline{
+    position: absolute;
+    left: 0;
+    width: 68px;
+    height: 2px;
+    background-color: #fff;
+    display: none;
 }
 .sn-quick-menu .mytaobao .menu-bd a{
     color: #666;
@@ -148,13 +156,21 @@ body{
     padding: 8px 10px;
     display: none;
     position: absolute;
-    left: 0;
+    left: -1px;
     top: 33px;
     background: #fff;
     filter: alpha(opacity=99);
     z-index: 93110;
     border: solid #eee;
     border-width: 0 1px 1px;
+}
+.sn-quick-menu .favorite .wline{
+    position: absolute;
+    left: 0;
+    width: 56px;
+    height: 2px;
+    background-color: #fff;
+    display: none;
 }
 .mobile{
     position: relative;
@@ -172,6 +188,20 @@ body{
     box-shadow: 0 0 5px #aaa;
     display: none;
 }
+.mobile .sn-qrcode b{
+    width: 0;
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+    position: absolute;
+    left: 50%;
+    top: -10px;
+    margin-left: -2px;
+    border-width: 5px;
+    border-style: dashed dashed solid;
+    border-color: transparent transparent #fff;
+}
+
 .mobile:hover .menu-hd{
     color: #ff0036;
 }
@@ -202,13 +232,21 @@ body{
     position: absolute;
     width: 122px;
     overflow: hidden;
-    right: 0;
+    right: -1px;
     left: auto;
     background: #fff;
     z-index: 93110;
     border: 1px solid #eee;
     border-width: 0 1px 1px;
     padding: 0 10px 12px 10px;
+    display: none;
+}
+.sn-quick-menu .seller .wline{
+    position: absolute;
+    right: 0;
+    width: 56px;
+    height: 2px;
+    background-color: #fff;
     display: none;
 }
 .seller .menu-bd h3{
@@ -269,13 +307,22 @@ body{
     width: 1198px;
     position: absolute;
     border-width: 0 1px 1px;
-    right: 0;
+    right: -1px;
     left: auto;
     border: 1px solid #eee;
     padding: 25px 0;
     background: #fff;
     font-family: '苹方';
     display: none;
+}
+.sn-quick-menu .sitemap .wline{
+    position: absolute;
+    right: 0;
+    width: 87.5px;
+    height: 3px;
+    background-color: #fff;
+    display: none;
+    z-index: 100;
 }
 .sitemap .menu-bd a{
     color: #666;
@@ -359,18 +406,20 @@ body{
     width: 100%;
     height: 130px;
     background: #fff;
-    position: relative;
+    
 }
 .headerLayout{
-    width: 1230px;
+    width: 1260px;
     height: 100%;
     margin: auto;
+    position: relative;
 }
 .headerLayout .ad{
     position: absolute;
     width: 240px;
     height: 130px;
-    left: 0;
+    
+    left:-20px;
     top: 0;
     vertical-align: middle;
 }
@@ -641,6 +690,38 @@ input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{
     cursor: pointer;
     opacity: .3;
 }
+.five{
+    width: 100%;
+    height: 359px;
+    padding-top: 30px;
+    box-sizing: border-box;
+}
+.Fcon{
+    width: 1260px;
+    height: 329px;
+    margin: 0 auto;
+}
+.Ftitle{
+    width: 600px;
+    height: 40px;
+    margin: 0 auto 20px;
+}
+.image{
+    width: 244px;
+    height: 269px;
+    margin-right: 10px;
+    float: left;
+    background-color: white;
+    transition: all 0.4s;
+}
+.image:hover{
+    opacity: 0.7;
+}
+.image:nth-child(5){
+    margin-right: 0;
+
+}
+
 .activity-bg{
     width: 100%;
     /* height: 5841px; */
@@ -684,6 +765,7 @@ input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{
     border-style: solid;
     border-width: 0px 0px 1px;
     border-color: #eeeeee;
+    position: relative;
 }
 .activity-bg .fight .cn{
     display: inline-block;
@@ -880,6 +962,7 @@ input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{
     display: table-cell;
     vertical-align: middle;
 }
+
 .floor-con .line-body .banner-detail .left-title-wrap .left-title{
     display: inline-block;
     vertical-align: middle;
@@ -1085,6 +1168,10 @@ input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{
     height: 300px;
     border: 1px solid #fff;
 }
+.middle-column .grid .floor-item-content-wrap:hover{
+    border: 1px solid #ff0036;
+    box-sizing: border-box;
+}
 .special{
     width: 170px;
     height: 170px;
@@ -1127,7 +1214,7 @@ input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{
 }
 .floor-item-content-wrap:hover{
     border: 1px solid #FF0036;
-    opacity: 0.7;
+    
 }
 .floor-item-tag{
     visibility: hidden;
@@ -1142,6 +1229,9 @@ input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{
 .floor-item-content-wrap .floor-item-img{
     width: 185px;
     height: 185px;
+}
+.floor-item-content-wrap .floor-item-img:hover{
+    opacity: 0.7;
 }
 .floor-item-content-wrap .floor-item-title{
     width: 135px;
@@ -1260,7 +1350,7 @@ input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{
     height: 319px;
     margin-right: 12px;
     margin-bottom: 7px;
-    background: pink;
+    /* background: pink; */
 }
 .guess .content ul li:nth-of-type(5n){
     margin-right: 0;
@@ -1291,6 +1381,7 @@ input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{
     margin-right: 12px;
     margin-bottom: 7px;
 }
+
 .wonderful-item .card-item{
     display: block;
     border: 2px solid #fff;
@@ -1301,6 +1392,7 @@ input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{
     margin-bottom: 7px;
     width: 100%;
     height: 315px;
+    box-sizing: border-box;
 }
 .wonderful-item .card-item .item-pic{
     display: block;
@@ -1309,6 +1401,15 @@ input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{
     overflow: hidden;
     margin: 20px auto 0px auto;
     transition: opacity 300ms ease-out;
+}
+.guess .wonderful-item .card-item:hover{
+    border: 1px solid #FF0036;
+    
+}
+.guess .wonderful-item:hover .item-pic{
+    
+    opacity: 0.7;
+    
 }
 .wonderful-item .card-item .item-pic img{
     width: 185px;
@@ -1576,7 +1677,7 @@ font-weight: 400;
     z-index: 9999;
 }
 .mui-mbar-tab-prof{
-    top: 0px;
+    top: 120px;
     margin: 35px 0px 0px;
     position: relative;
     left: 0;
@@ -1602,6 +1703,18 @@ font-weight: 400;
     background-color: #494949;
     box-shadow: 0 0 5px rgba(0,0,0,.2);
     opacity: 0;
+    z-index: 20;
+    
+    
+}
+.gai{
+    width: 120px;
+    height: 100%;
+    position: fixed;
+    right: 35px;
+    top: 0;
+    z-index: 20;
+
 }
 .tips .mui-mbar-tab-tip-arr{
     position: absolute;
@@ -1616,7 +1729,7 @@ font-weight: 400;
     font-family: "\5b8b\4f53";
 }
 .mui-mbar-tab-cart{
-    top: 0px;
+    top: 120px;
     margin: 8px 0px;
     height: 100px;
     position: relative;
@@ -1660,7 +1773,7 @@ font-weight: 400;
     border-width: 1px 0;
 }
 .mui-mbar-tab-asset{
-    top: 0px;
+    top: 120px;
     margin: 8px 0px;
     position: relative;
     left: 0;
@@ -1675,7 +1788,7 @@ font-weight: 400;
     background: url('../img/sidebanner/side3.png')
 }
 .mui-mbar-tab-favor{
-    top: 0px;
+    top: 120px;
     margin: 8px 0px;
     position: relative;
     left: 0;
@@ -1690,7 +1803,7 @@ font-weight: 400;
     background: url('../img/sidebanner/side4.png')
 }
 .mui-mbar-tab-foot{
-    top: 0px;
+    top: 120px;
     margin: 8px 0px;
     position: relative;
     left: 0;
@@ -1705,7 +1818,7 @@ font-weight: 400;
     background: url('../img/sidebanner/side5.png')
 }
 .mui-mbar-tab-charge{
-    top: 0px;
+    top: 120px;
     margin: 8px 0px;
     position: relative;
     left: 0;
@@ -1723,11 +1836,13 @@ font-weight: 400;
     bottom: 15px;
     position: absolute;
     display: block;
+    z-index: 10;
 }
 .mui-mbar-tab-top .logo{
     width: 35px;
     height: 35px;
     background: url('../img/sidebanner/side9.png')
+    
 }
 .mui-mbar-tab-qrcode{
     bottom: 45px;
@@ -1743,6 +1858,7 @@ font-weight: 400;
     bottom: 80px;
     position: absolute;
     display: block;
+    z-index: 10;
 }
 .mui-mbar-tab-ue .logo{
     width: 35px;
@@ -1760,6 +1876,7 @@ font-weight: 400;
     /* background: #00B262; */
     color: #999;
     font-size: 12px;
+    display: none;
 }
 .sn-nav-wrapper{
     width: 100%;
