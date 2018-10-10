@@ -110,6 +110,35 @@ $(function(){
     let cz=$('.mui-mbar-tab-charge')
     let top=$('.mui-mbar-tab-top')
     let fk=$('.mui-mbar-tab-ue')
+    let mask=$(".mui-mbar-tabs-mask")
+    let car=$(".mui-mbar-tab-cart")
+    
+    // $(document).mousedown(function () {
+        $(document).mousemove(function () { 
+            let width=window.innerWidth
+            console.log(width); 
+            if(width<=1260){
+                mask.css("width",0)
+                car.mouseenter(function () {
+                    mask.css("width",35)
+                    })
+                
+                car.mouseleave(function () {
+                    mask.css("width",0)
+                    })
+                }
+            
+            else{
+                mask.css("width",35)
+            }
+            
+        })
+        
+        
+    
+    
+
+    
     function aside(item){
         item.mouseenter(function(){
             item.find('.logo').css({
